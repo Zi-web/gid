@@ -9,6 +9,58 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   </head>
   <body>
+    <script>
+      function validate(){
+       //Считаем значения из полей name и email в переменные x и y
+       var log = document.querySelector("[name=name]").value;
+       var tel = document.querySelector("[name=tel]").value;
+       var re = /^\d[\d\(\)\ -]{4,14}\d$/;
+       var myPhone = document.getElementById('tel').value;
+       var valid = re.test(myPhone);
+       /*var sel = document.getElementById("items").options.selectedIndex;*/
+       
+       //Если поле name пустое выведем сообщение и предотвратим отправку формы
+       if (log.length==0){
+          document.getElementById("namef").innerHTML="*поле обязательно для заполнения";
+          return false;
+       }
+        if (log.length!==0){
+          document.getElementById("namef").innerHTML="";
+        }
+    /*
+       //Если поле tel пустое выведем сообщение и предотвратим отправку формы
+       if (tel.length==0){
+          document.getElementById("telf").innerHTML="*поле обязательно для заполнения";
+          return false;
+        
+       }
+      if (tel.length!==0){
+          document.getElementById("telf").innerHTML="";
+        }
+*/        
+          if (valid) {
+            document.getElementById("telf").innerHTML="";
+          }
+          else {
+            document.getElementById("telf").innerHTML="Номер телефона введен неправильно!";
+            return false
+          }
+          /*
+          if (valid) output = 'Номер телефона введен правильно!';
+          else output = 'Номер телефона введен неправильно!';
+          document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br />'+output;
+          return valid;
+    */
+
+       //Если поле select пустое выведем сообщение и предотвратим отправку формы
+       /*if (sel == 0 ){
+          document.getElementById("itemsf").innerHTML="*выберите пункт";
+          return false;
+        }*/
+      }
+     
+    </script>
+
     <!------advantage---------->
     <div class="advantage">
       <div class="advantages__title">Наши преимущества</div>
@@ -37,12 +89,12 @@
         <a href="" class="advantage-btn__block">
           <div class="advantage-btn__text">Подберите мне тур</div>
         </a>
-        <a href="" class="advantage-btn__block">
+        <div class="advantage-btn__block  advantage-btn__tel">
           <div class="advantage-btn__text">Запрос обратного звонка</div>
-        </a>
-        <a href="" class="advantage-btn__block">
+        </div>
+        <div class="advantage-btn__block  advantage-btn__message">
           <div class="advantage-btn__text">Связь с экспертом</div>
-        </a>
+        </div>
       </div>
     </div>
   <!------end advantage---------->
@@ -74,16 +126,21 @@
     </div>
 
     <!---- Найди тур своей мечты ---->
-
-    <div class="tour">
-      <div class="tour__wrapper">
+<!----
+    <section class="tour">
+      <header style="text-align: center">
         <h2 class="tour__title">Найди тур своей мечты</h2>
+      </header>
+      <div class="tour__wrapper">
         <div class="tour-block__wrapper">
           <a href="" class="tour-block  tour-block__big">
+            
+            <img src="img/cyprus_1490865999.jpg" class="tour-block__img">
+            
             <div class="tour-block__price">Цена от 20 000 руб.
             </div>
-            <img src="img/cyprus_1490865999.jpg" class="tour-block__img">
             <div class="tour-block__text">Туры на Кипр</div>
+
           </a>
           <div class="tour-block__small-wrap">
             <a href="" class="tour-block__small  season-block  early-booking">
@@ -151,8 +208,107 @@
           </div>
         </div>
       </div>
-    </div> 
-  
+    </section> 
+--->
+
+      <!---- Найди тур своей мечты (без Z-index)---->
+
+    <section class="tour">
+      <header style="text-align: center">
+        <h2 class="tour__title">Найди тур своей мечты</h2>
+      </header>
+      <div class="tour__wrapper">
+        <div class="tour-block__wrapper">
+          <a href="" class="tour-block  tour-block__big">
+            
+            <img src="img/cyprus_1490865999.jpg" class="tour-block__img">
+            <div class="tour-block__wrap">
+              <div class="tour-block__price">Цена от 20 000 руб.
+              </div>
+              <div class="tour-block__text">Туры на Кипр</div>
+            </div>
+
+          </a>
+          <div class="tour-block__small-wrap">
+            <a href="" class="tour-block__small  season-block  early-booking">
+              <div class="season-block__content">
+                <svg class="early-booking__svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 25.5" id="fire" width="100%" height="100%">
+                    <path d="M7.1 12.2c0-.3-.2-.6-.2-.9.8.6 1.3 1.4 1.3 2.6v.5h5.1c-.4-2.3-1.9-4.5-1.7-7.1 0-.3.1-.6.1-.9.1-.3.3-.6.3-.8-1.6.7-2.7 2.1-2.7 4.3C8 8.4 6.6 6.4 6.4 3.7c0-1.5.4-2.5.7-3.7H7C4.8 1.4 3.5 4 4 7.5c.1.8.5 1.7.5 2.7 0 1-.3 1.8-.7 2.5.3-2.3-.3-4.7-2-5.5.2 1.8.3 3.2-.3 4.3-.1.3-.4.5-.5.8-.5.8-.9 1.7-1 2.9v1.1c.4 2.4 2.1 3.8 4.4 4.4.3.1.7.3 1 .1-.8-.5-1.5-1-1.6-2.1-.2-1.6 1.2-3 .7-4.7.6.4 1.1 1 .9 2 .3 0 .4-.3.6-.5.6-.8 1.3-1.8 1.1-3.3zm0 0"></path>
+                    <path d="M7 15.1v10.4h17V15.1H7zm8.5 9c-2.1 0-3.8-1.7-3.8-3.8 0-2.1 1.7-3.8 3.8-3.8 2.1 0 3.8 1.7 3.8 3.8 0 2.1-1.7 3.8-3.8 3.8zm0 0"></path><path d="M16.7 20.2c-.2-.1-.5-.3-1-.4v-1.6c.3 0 .5.1.7.4.1.1.1.3.1.4h.5c0-.4-.1-.7-.4-.9-.2-.2-.6-.4-1-.4v-.4h-.3v.4c-.4 0-.8.1-1 .4-.2.3-.4.6-.4.9 0 .4.1.7.3.9.2.2.6.4 1.1.5v1.8c-.4 0-.6-.2-.8-.4-.1-.1-.1-.4-.1-.7h-.6c0 .4.1.7.2.9.2.4.7.6 1.3.7v.6h.3v-.6c.4 0 .7-.1.9-.3.4-.2.6-.7.6-1.3 0-.4-.1-.7-.4-.9zm-1.4-.4c-.3-.1-.4-.1-.6-.3-.1-.1-.2-.3-.2-.5s.1-.4.2-.5c.1-.2.3-.3.6-.3v1.6zm1.1 2c-.1.3-.4.4-.8.4v-1.8c.3.1.5.2.6.2.2.1.3.4.3.6 0 .3 0 .4-.1.6zm0 0"></path></svg>
+                </svg>
+                <p class="season-block__text">Ранее бронирование</p>
+                </div>
+            </a>
+            <a href="" class="tour-block__small  season-block  may-tours">
+              <div class="season-block__content">
+                <svg class="may-tours__svg">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211.6 203.8" id="may" width="100%" height="100%"><path d="M151.9 76.9c0-32-20.4-58-45.6-58-25.2 0-45.6 26-45.6 58 0 30.7 31.2 57.9 44 60.1-.6 1.5-1.5 3.1-2.7 3.8-1.4.9.7-.2 3.6-.9.3 4.5-.2 9 0 13.5.4 7.3 4.5 13.1 9.7 17.9-5.4 2.6-11.4 6.4-11 12.7.4 6.6 5.4 11.3 4.3 18.4-.5 2.8 3.6 1 3.9-1.1.9-5.3-.8-9.8-2.9-14.5-.8-1.9-1.8-4.1-1.1-6.1 1.1-3.7 7.8-6 10.9-7.3 1.1-.5 2.4-2.6 1.2-3.6-6.4-5.3-10.8-11.4-11.1-19.9-.1-3.5.2-7 .1-10.5 1.7 0 3.4.3 4.5 1.4-.6-.5-2.2-2.2-2.4-4.8 14.3-6 40.2-31.2 40.2-59.1zm-33.6-40.4l8.4-3.8c25.8 27.2 6.4 48 6.4 48 8.9-25.3-14.8-44.2-14.8-44.2z"></path><path d="M55 74.6C55 52.2 65.3 32.9 80.2 24 72.2 9.5 59 0 44.1 0 19.7 0 0 25.1 0 56c0 29.1 29.1 55 41.8 58-.6 1.7-1.5 3.6-2.9 4.5-1.5 1 1.1-.4 4.3-1.1 5.3 20 7 41.7 6.1 63.8-.1 2.8 3.7 1 3.8-1 .9-21.1-.3-42.6-5.4-63.1 1.1.2 2.1.5 2.9 1.2-.6-.5-2.3-2.3-2.3-5 4.3-1.6 9.9-5.1 15.5-10.1-5.2-8.6-8.8-18.4-8.8-28.6zM26.3 28.8c-.4.4-.8.8-1.2 1.3-.8.9-1.6 1.8-2.3 2.8-1.5 1.9-2.9 3.9-4.1 5.9-2.5 4.1-4.5 8.6-5.6 13.3-1.1 4.7-1.2 9.6 0 14.5 1.1 4.8 3.5 9.4 6.7 13.4-3.7-3.5-6.9-7.8-8.9-12.7-2-4.9-2.8-10.4-2.4-15.8.4-5.4 1.9-10.7 3.9-15.7 1.1-2.5 2.3-5 3.6-7.3.7-1.2 1.4-2.4 2.1-3.5.4-.6.8-1.1 1.2-1.7.4-.6.8-1.1 1.3-1.8l6.8 6.3c-.3.2-.7.6-1.1 1zM211.6 57c0-30-19.1-54.4-42.8-54.4-14.5 0-27.3 9.2-35.1 23.2 14.4 8.7 24.4 27.5 24.4 49.1 0 9.9-3.5 19.4-8.6 27.8 5.5 4.9 10.9 8.3 15 9.8 0 2.6-1.7 4.4-2.2 4.9.8-.7 1.8-1 2.9-1.2-5 19.9-6.2 40.7-5.3 61.2.1 2 3.8 3.7 3.7 1-.9-20.8.4-41.9 5.8-62 3.2.7 5.8 2 4.3 1.1-1.3-.9-2.2-2.8-2.8-4.4 12.5-2.7 40.7-27.8 40.7-56.1zm-24.3-25.1c-.4-.5-.8-.8-1.2-1.3l-1.1-1.1 6.6-6.1c.5.6.8 1.1 1.2 1.7.4.6.8 1.1 1.1 1.7.7 1.1 1.4 2.2 2.1 3.4 1.3 2.3 2.5 4.7 3.5 7.1 2 4.8 3.4 10 3.8 15.3.4 5.2-.4 10.6-2.3 15.4-1.9 4.8-5 8.9-8.6 12.3 3.1-3.9 5.4-8.4 6.5-13 1.1-4.7 1.1-9.5 0-14-1.1-4.6-3-8.9-5.4-12.9-1.2-2-2.5-3.9-4-5.7-.7-1-1.4-1.9-2.2-2.8z"></path></svg>
+                </svg>
+                <p class="season-block__text">Чехия на Майские праздники</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="tour-block__wrapper">
+          <div class="tour-block__small-wrap">
+            <a href="" class="tour-block  tour-block__small">
+              <img src="img/czech_republic_1490866300.jpg" class="tour-block__img">
+              <div class="tour-block__wrap">
+                <div class="tour-block__price">Цена от 30 000 руб.
+                </div>
+                <div class="tour-block__text">Туры в Чехию</div>
+              </div>
+            </a>
+            <a href="" class="tour-block  tour-block__small">
+              <img src="img/prague_1490866301.jpg" class="tour-block__img">
+              <div class="tour-block__wrap">
+                <div class="tour-block__price">Цена от 20 000 руб.
+                </div>
+                <div class="tour-block__text">Туры в Прагу</div>
+              </div>
+            </a>
+          </div>
+          <a href="" class="tour-block  tour-block__big">
+            <img src="img/istanbul_1490866301.jpg" class="tour-block__img">
+            <div class="tour-block__wrap">
+              <div class="tour-block__price">Цена от 10 000 руб.
+              </div>
+              <div class="tour-block__text">Туры в Стамбул</div>
+            </div>
+          </a>
+        </div>
+        <div class="tour-block__wrapper">
+          <a href="" class="tour-block  tour-block__big">
+            <img src="img/greece_1490866662.jpg" class="tour-block__img">
+            <div class="tour-block__wrap">
+              <div class="tour-block__price">Цена от 25 000 руб.
+              </div>
+              <div class="tour-block__text">Туры в Грецию</div>
+            </div>
+          </a>
+          <div class="tour-block__small-wrap">
+            <a href="" class="tour-block  tour-block__small">
+              <img src="img/crete_1490866662.jpg" class="tour-block__img">
+              <div class="tour-block__wrap">
+                <div class="tour-block__price">Цена от 30 000 руб.
+                </div>
+                <div class="tour-block__text">Туры на остров Крит</div>
+              </div>
+            </a>
+            <a href="" class="tour-block  tour-block__small">
+              <img src="img/budapest_1490866662.jpg" class="tour-block__img">
+              <div class="tour-block__wrap">
+                <div class="tour-block__price">Цена от 20 000 руб.
+                </div>
+                <div class="tour-block__text">Туры в Будапешт</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section> 
+
   <!---- Партнеры туропрераторы ---->
   
   <div class="partners">
@@ -263,7 +419,6 @@
 
 <!---- Мы сможем подобрать Вам туры в страны ---->
   <div class="tour-selection">
-    
       <h2 class="tour-selection__title">Мы сможем подобрать Вам туры в страны</h2>
       <div class="tour-selection__wrapper">
       <div class="tour-selection__content  countries">
@@ -391,10 +546,58 @@
     </div>
   </div>
 
+<div class="popup-consultation  modal-content">
+  <div class="popup-consultation__form">
+    <span class="popup-consultation__close"></span>
+                  
+    <form action="#" method="post" class="form" id="form" onsubmit="return validate();">
+      <h3 class="popup-consultation__title">Бесплатная консультация</h3>
+      <p class="popup-consultation__descr">Оставьте свои данные, наши специалисты свяжутся с вами в течение 15 минут и ответят на все ваши вопросы!</p>
+              
+      <div class="popup-consultation__input  popup-consultation__input--name">
+        <input type="text" name="name" placeholder="Ваше имя" id="name">
+        <span style='color:red' id='namef'></span>
+      </div>
 
+      <div class="popup-consultation__input  popup-consultation__input--tel">
+        <input type="tel" id="tel" name="tel" placeholder="Введите номер телефона">
+        <span style='color:red' id='telf'></span>
+      </div>
+
+      <button type="submit" class="btn-form  btn-form--popup-consultation">Получить консультацию</button>
+    </form>  
+  </div>
+</div>
+
+<div class="popup-consultation2  modal-content2">
+  <div class="popup-consultation__form2">
+    <span class="popup-consultation__close2"></span>
+                  
+    <form action="/echo" method="post" class="form2">
+      <h3 class="popup-consultation__title">Бесплатная консультация</h3>
+      <p class="popup-consultation__descr">Напишите нам сообщение и мы ответим вам в ближайшее время</p>
+              
+      <div class="popup-consultation__input  popup-consultation__input--name2">
+        <input type="text" name="name2" placeholder="Ваше имя" id="name">
+      </div>
+
+       <div class="popup-consultation__input  popup-consultation__input--email2">
+        <input type="email" name="email" placeholder="Ваш Email *" id="email" class="contacts__form-email">
+      </div>
+
+
+      <div class="popup-consultation__textarea  popup-consultation__input--message">
+        <textarea name="message" id="message" rows="6" placeholder="Ваш комментарий к заявке"></textarea>
+      </div>
+
+      <button type="submit" class="btn-form  btn-form--popup-consultation">Связаться с экспертом</button>
+    </form>  
+  </div>
+</div>
 <!---
   <script src="https://www.youtube.com/iframe_api"></script> --->
   <script type="text/javascript" src="js/play.js"></script>
   <script type="text/javascript" src="js/slider-partners.js"></script>
+  <script type="text/javascript" src="js/form.js"></script>
   </body>
 </html>
