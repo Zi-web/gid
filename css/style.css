@@ -332,7 +332,6 @@ template {
 }
 .btn--crios:hover,
 .btn--offer:hover {
-  /*background-color: darken(#e2244b, 10%);*/
   box-shadow: 0 0 35px rgba(218, 229, 239, 0.9);
 }
 .advantage {
@@ -356,159 +355,6 @@ template {
   margin-bottom: 0.84615em;
   font-family: "Century Gothic";
 }
-/*
-.advantage-block {
-	width: 100%;
-	height: 284px;
-    max-width: 31.8%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    background-color: rgba(0,0,0,.35);
-    position: relative;
-    transition: .4s ease;
-    font-size: 10px;
-
-}
-
-.advantage-block:hover {
-	background-color: rgba(0,0,0,.65);
-}
-
-.advantage-block--1:before, .advantage-block--2:before, .advantage-block--3:before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-	height: 100%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
-}
-
-
-.advantage-block--1:before {
-	background-image: url(../img/advantages1.jpg);
-    background-repeat: no-repeat;
-
-}
-
-.advantage-block--2:before {
-	background-image: url(../img/advantages2.jpg);
-    background-repeat: no-repeat;
-}
-
-.advantage-block--3:before {
-	background-image: url(../img/advantages3.jpg);
-    background-repeat: no-repeat;
-}
-
-.advantage-block__wrapper {
-	text-align: center;
-}
-
-.advantage-block__title {
-	font-size: 3em;
-    color: #fff;
-    text-align: center;
-    font-family: Century Gothic;
-    margin-bottom: 1em;
-}
-
-.advantage-block__descr {
-	font-size: 1.5em;
-    color: #fff;
-    text-align: center;
-}
-
-@media (min-width: 1026px) and (max-width: 1200px) {
-	.advantage-block {
-    	font-size: 9px;
-    	height: 284px;
-	}
-}
-
-@media (min-width: 929px) and (max-width: 1025px) {
-	.advantage-block {
-    	font-size: 7px;
-    	height: 254px;
-	}
-}
-
-@media (min-width: 642px) and (max-width: 928px) {
-	.advantage-block {
-    	font-size: 6px;
-    	height: 234px;
-	}
-}
-
-@media (min-width: 642px) and (max-width: 768px) {
-	.advantage-block--1 {
-		max-width: 49%;
-		flex-grow: 1;
-	}
-	.advantage-block--2 {
-		flex-grow: 1;
-		max-width: 49%;
-	}
-	.advantage-block--3 {
-		flex-grow: 4;
-		margin-top: 15px;
-		max-width: 100%;
-	}
-	.advantage-block--3:before {
-		background-image: url(../img/advantages3_tab.jpg);
-	    background-repeat: no-repeat;
-	}
-}
-
-@media (min-width: 512px) and (max-width: 641px) {
-	.advantage-block {
-	    max-width: 100%;
-	    margin-bottom: 20px;
-	    font-size: 15px;
-	}
-	.advantage-block--1:before {
-		background-image: url(../img/advantages1__mobile.jpg);
-	    background-repeat: no-repeat;
-	}
-
-	.advantage-block--2:before {
-		background-image: url(../img/advantages2__mobile.jpg);
-	    background-repeat: no-repeat;
-	}
-
-	.advantage-block--3:before {
-		background-image: url(../img/advantages3__mobile.jpg);
-	    background-repeat: no-repeat;
-	}
-}
-
-@media (min-width: 298px) and (max-width: 511px) {
-	.advantage-block {
-	    max-width: 100%;
-	    margin-bottom: 20px;
-	    font-size: 10px;
-	}
-	.advantage-block--1:before {
-		background-image: url(../img/advantages1__mobile.jpg);
-	    background-repeat: no-repeat;
-	}
-
-	.advantage-block--2:before {
-		background-image: url(../img/advantages2__mobile.jpg);
-	    background-repeat: no-repeat;
-	}
-
-	.advantage-block--3:before {
-		background-image: url(../img/advantages3__mobile.jpg);
-	    background-repeat: no-repeat;
-	}
-}
-*/
 .advantage-block {
   width: 100%;
   height: 284px;
@@ -782,279 +628,6 @@ template {
   box-shadow: 0 0 6px;
   /*тень*/
 }
-/*.tour {
-	font-size: 10px;
-}
-
-.tour__wrapper {
-	max-width: 120em;
-    width: 100%;
-    margin: 0 auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.tour__title {
-	font-size: 2.6em;
-    color: #000;
-    text-align: center;
-    font-family: Century Gothic;
-    margin-bottom: 1.15385em;
-    font-weight: 400;
-}
-
-.tour-block__wrapper {
-	margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-}
-
-.tour-block__big {
-	text-decoration: none;
-	height: 47.5em;
-    width: 76em;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.tour-block__big:nth-child(odd) {
-    margin-left: -.3em;
-    margin-right: 2em;
-}
-
-.tour-block__big:nth-child(2n) {
-    margin-left: 2em;
-    margin-right: -.3em;
-}
-
-.tour-block__small {
-	text-decoration: none;
-	height: 22em;
-    width: 40em;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tour-block__small-wrap {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.tour-block {
-	position: relative;
-	overflow: hidden;
-	transition: .4s ease;
-	text-align: center;
-	background-color: rgba(0,0,0,.45);
-}
-
-.tour-block:hover {
-	background-color: rgba(0,0,0,.65);
-}
-
-
-.tour-block__price {
-	font-size: 2em;
-    color: #fff;
-    background-color: #f65a3a;
-    padding: .5em .75em .65em;
-    max-width: 12em;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.tour-block__img {
-	position: relative;
-	z-index: -2;
-    transition: .4s ease;
-    object-fit: cover;
-    min-width: 100%;
-  	min-height: 100%;
-  	transform: translate(-50%,-50%);
-  	left: 50%;
-    top: 50%;
-}
-
-.tour-block:hover .tour-block__img{
-	transform: scale(1.1) translate(-50%, -50%);
-}
-
-.tour-block__text {
-	font-size: 2.6em;
-	width: 100%;
-    color: #fff;
-    text-align: center;
-    font-family: Century Gothic;
-    position: absolute;
-    top: 50%;
-    left: 0;
-}
-
-.season-block {
-	box-sizing: border-box;
-	background-color: #fff;
-    text-align: center;
-    transition: all .4s ease;
-    max-height: 22em;
-    max-width: 40em;
-}
-
-.season-block__content {
-
-}
-
-.season-block__text {
-	font-size: 2.6em;
-    font-weight: bold;
-    font-family: "Century Gothic";
-    margin-top: 0.38462em;
-}
-
-.early-booking {
-	border: 3px solid #f65a3a;
-    color: #f65a3a;
-}
-
-.early-booking:hover {
-	background: #f65a3a;
-	color: #fff;
-}
-
-.early-booking:hover .early-booking__svg {
-	fill: #fff;
-}
-
-.early-booking__svg {
-	transition: all .4s ease;
-	width: 7.9em;
-    height: 8.4em;
-    fill: #f65a3a;
-}
-
-.may-tours {
-	border: 3px solid #6cd489;
-    color: #6cd489;
-}
-
-.may-tours__svg {
-	transition: all .4s ease;
-	width: 8em;
-    height: 8.1em;
-    fill: #6cd489;
-}
-
-.may-tours:hover {
-	background: #6cd489;
-	color: #fff;
-}
-
-.may-tours:hover .may-tours__svg {
-	fill: #fff;
-}
-
-@media (min-width: 769px) and (max-width: 1100px) {
-	.tour {
-		font-size: 9px;
-	}
-}
-
-@media (min-width: 608px) and (max-width: 768px) {
-	.tour {
-		font-size: 8px;
-	}
-	.tour-block__wrapper {
-		flex-direction: column;
-	}
-	.tour-block__small-wrap {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-	.season-block {
-		box-sizing: border-box;
-		max-width: 50%;
-	}
-
-	.tour-block__big {
-		width: 100%;
-    	height: 29em;
-	}
-	.tour-block__small {
-		width: 49%;
-		max-height: 20em;
-	}
-	.tour-block__big {
-		margin-left: 0;
-	}
-	.tour-block__big:nth-child(odd) {
-	    margin-left: 0;
-	    margin-right: 0;
-	}
-	.tour-block__big:nth-child(2n) {
-	    margin-left: 0;
-	    margin-right: 0;
-	}
-}
-
-
-@media (min-width: 298px) and (max-width: 607px) {
-	.tour-block__wrapper {
-		flex-direction: column;
-	}
-	.tour-block__small-wrap {
-		flex-direction: column;
-	}
-	.early-booking {
-		width: 100%;
-	}
-	.may-tours {
-		width: 100%;
-	}
-	.season-block {
-		box-sizing: border-box;
-	    max-height: 100%;
-	    max-width: 100%;
-	}
-	.tour-block__big:nth-child(odd) {
-	    margin-left: 0;
-	    margin-right: 0;
-	}
-	.tour-block__big:nth-child(2n) {
-	    margin-left: 0;
-	    margin-right: 0;
-	}
-}
-
-@media (min-width: 441px) and (max-width: 607px) {
-	.tour-block__big {
-		max-width: 100%;
-    	height: 27em;
-	}
-	.tour-block__small {
-		width: 100%;
-		height: 27em;
-	}
-}
-
-@media (min-width: 298px) and (max-width: 440px) {
-	.tour-block__big {
-		max-width: 100%;
-    	height: 25em;
-	}
-	.tour-block__small {
-		width: 100%;
-		height: 25em;
-	}
-}*/
-/* ------(без Z-index)----*/
 .tour {
   font-size: 10px;
 }
@@ -1303,38 +876,6 @@ template {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f65b3c' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
   fill: #f65b3c;
 }
-/*
-@media (min-width: 298px) and (max-width: 400px) {
-	.partners__wrapper {
-		max-width: 40em;
-	}
-	.slider__item {
-      flex: 0 0 100%;
-      max-width: 100%;
-    }
-}
-
-@media (min-width: 298px) and (max-width: 640px) {
-	.partners__wrapper {
-		max-width: 64em;
-	}
-	.slider__item {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-    
-}
-
-
-@media (min-width: 641px) and (max-width: 1200px) {
-	.partners__wrapper {
-		max-width: 120em;
-	}
-	.slider__item {
-      flex: 0 0 25%;
-      max-width: 25%;
-    }
-}*/
 .subscribe {
   font-size: 10px;
   margin-top: 15px;
@@ -1518,7 +1059,6 @@ template {
 }
 .tour-selection {
   font-size: 10px;
-  /*position: relative;*/
   margin-top: 3em;
   margin-bottom: 2em;
 }
@@ -1603,13 +1143,11 @@ template {
 .popup-consultation__form2 {
   margin: 0 auto;
   display: none;
-  /*width: auto;*/
   max-width: 635px;
   height: auto;
 }
 .modal-content__overlay-show {
   background: rgba(0, 0, 0, 0.6);
-  /*overflow: auto;*/
   box-sizing: border-box;
   height: 100%;
   width: 100%;
@@ -1764,13 +1302,6 @@ template {
   border-radius: 10px;
   text-align: center;
 }
-/*
-.popup-consultation__form label, .popup-consultation__form2 label {
-    display: block;
-    margin-bottom: 5px;
-    font-family: "roboto-medium-webfont", Helvetica, Arial, sans-serif;
-    color: white;
-}*/
 .popup-consultation__input {
   box-sizing: border-box;
   position: relative;
@@ -2204,10 +1735,7 @@ template {
 }
 @media (max-width: 768px) {
   .advantage-btn {
-    /*display: none;*/
     width: 100%;
-    /*flex-direction: column;*/
-    /*font-size: 1em;*/
   }
   .advantage-btn__message {
     display: none;
